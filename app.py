@@ -25,8 +25,7 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
-@app.route('/customers', methods=['GET'])
-@cross_origin()
+
 def getCustomers():
     result = db.selectQuery("customers")
     newresult =[]
