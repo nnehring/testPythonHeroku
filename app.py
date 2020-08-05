@@ -4,7 +4,8 @@ from OurClass.Customer import Customer
 
 import json
 import decimal
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
+
 # application = app
 app = Flask(__name__)
 db = DBClass("yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "b1cysxvmfoossupx", "i01bzoa5qwfl8ols", "wkw742ww19hqbtlx")
