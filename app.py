@@ -10,6 +10,11 @@ app = Flask(__name__)
 db = DBClass("yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "b1cysxvmfoossupx", "i01bzoa5qwfl8ols", "wkw742ww19hqbtlx")
 #db = DBClass("localhost", "root", "", "testflask")
 CORS(app)
+cors = CORS(app, resources={
+    r"/*":{
+        "origins":"*"
+    }
+})
 
 app = Flask(__name__)
 
