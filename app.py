@@ -25,7 +25,8 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
-
+@app.route('/customers', methods=['GET'])
+@cross_origin()
 def getCustomers():
     result = db.selectQuery("customers")
     newresult =[]
@@ -41,6 +42,7 @@ def getCustomers():
     return json.dumps(newresult)
 
 @app.route('/customers/country', methods=['GET'])
+@cross_origin()
 def getCustomersCountry():
     result = db.countrySort("customers")
     newresult =[]
@@ -60,6 +62,7 @@ def getCustomersCountry():
 #     return simplejson.dumps(result)
 
 @app.route('/customers/country/<countryname>', methods=['GET'])
+@cross_origin()
 def getCustomersCountrybyName(countryname):
     result = db.countrySort("customers", countryname)
     newresult =[]
@@ -75,6 +78,7 @@ def getCustomersCountrybyName(countryname):
     return json.dumps(newresult)
 
 @app.route('/customers/countryList', methods=['GET'])
+@cross_origin()
 def listCountries():
     result = db.uniqueColumn("customers","country")
     return json.dumps(result)
